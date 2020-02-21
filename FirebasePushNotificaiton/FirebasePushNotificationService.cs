@@ -1,4 +1,5 @@
-﻿using FirebasePushNotificaiton.Interfaces;
+﻿using FirebasePushNotificaiton.Helper;
+using FirebasePushNotificaiton.Interfaces;
 using FirebasePushNotificaiton.Models;
 using FirebasePushNotificaiton.Services;
 using Newtonsoft.Json;
@@ -13,15 +14,17 @@ namespace FirebasePushNotificaiton
     /// Firebase Push Notification Service
     /// </summary>
     public class FirebasePushNotificationService : INotification<FirebaseMessage>
-    {
-        private readonly string _ServerKey;
+    {        
+        private readonly string _encryptedServerKey;
+        private readonly string _passPhrase;
 
         /// <summary>
         /// Initial Firebase Console Server Key
         /// </summary>
-        public FirebasePushNotificationService(string ServerKey)
+        public FirebasePushNotificationService(string encryptedServerKeyServerKey,string passPhrase)
         {
-            _ServerKey = ServerKey;
+            _encryptedServerKey = encryptedServerKeyServerKey;
+            _passPhrase = passPhrase;
         }
 
         private static Uri FireBasePushNotificationsURL = new Uri("https://fcm.googleapis.com/fcm/send");
@@ -39,7 +42,7 @@ namespace FirebasePushNotificaiton
                 string jsonMessage = JsonConvert.SerializeObject(notificationObject);
                 var request = new HttpRequestMessage(HttpMethod.Post, FireBasePushNotificationsURL);
 
-                request.Headers.TryAddWithoutValidation("Authorization", "key=" + _ServerKey);
+                request.Headers.TryAddWithoutValidation("Authorization", "key=" + EncryptionHelper.Decrypt(_encryptedServerKey,_passPhrase));
                 request.Content = new StringContent(jsonMessage, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage result;
