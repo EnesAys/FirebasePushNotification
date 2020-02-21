@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FirebasePushNotificaiton</name>
+    </assembly>
+    <members>
+        <member name="T:FirebasePushNotificaiton.FirebasePushNotificationService">
+            <summary>
+            Firebase Push Notification Service
+            </summary>
+        </member>
+        <member name="M:FirebasePushNotificaiton.FirebasePushNotificationService.#ctor(System.String)">
+            <summary>
+            Initial Firebase Console Server Key
+            </summary>
+        </member>
+        <member name="M:FirebasePushNotificaiton.FirebasePushNotificationService.Send(FirebasePushNotificaiton.Models.FirebaseMessage)">
+            <summary>
+            Firebase Push Notification Send Method
+            </summary>
+            <param name="notificationObject">Firebase Api Push Notification Send Method request Model parameter</param>
+            <returns> bool </returns>        
+        </member>
+        <member name="T:FirebasePushNotificaiton.Interfaces.INotification`1">
+            <summary>
+            Notification Interface
+            </summary>
+        </member>
+        <member name="M:FirebasePushNotificaiton.Interfaces.INotification`1.Send(`0)">
+            <summary>
+            Notification Send Method
+            </summary>
+        </member>
+        <member name="T:FirebasePushNotificaiton.Models.FirebaseMessage">
+            <summary>
+            Firebase Api Push Notification Send Method request Model
+            </summary>
+        </member>
+        <member name="P:FirebasePushNotificaiton.Models.FirebaseMessage.Registration_Ids">
+            <summary>
+            List of all devices assigned to a user
+            </summary>
+        </member>
+        <member name="P:FirebasePushNotificaiton.Models.FirebaseMessage.To">
+            <summary>
+            Spesified user device token
+            </summary>
+        </member>
+        <member name="P:FirebasePushNotificaiton.Models.FirebaseMessage.Notification">
+            <summary>
+            Notification Model
+            </summary>
+        </member>
+        <member name="P:FirebasePushNotificaiton.Models.FirebaseMessage.Data">
+            <summary>
+            Object with all extra information you want to send hidden in the notification
+            </summary>
+        </member>
+        <member name="T:FirebasePushNotificaiton.Models.Notification">
+            <summary>
+            Firebase Message Notification Model
+            </summary>
+        </member>
+        <member name="M:FirebasePushNotificaiton.Models.Notification.#ctor">
+            <summary>
+            Set sound default and badge 1
+            </summary>
+        </member>
+        <member name="P:FirebasePushNotificaiton.Models.Notification.Title">
+            <summary>
+            Title of notification
+            </summary>
+        </member>
+        <member name="P:FirebasePushNotificaiton.Models.Notification.Text">
+            <summary>
+            Description of notification
+            </summary>
+        </member>
+        <member name="P:FirebasePushNotificaiton.Models.Notification.Sound">
+            <summary>
+            Sound of notification
+            </summary>
+        </member>
+        <member name="P:FirebasePushNotificaiton.Models.Notification.Badge">
+            <summary>
+            Notification Badge 
+            </summary>
+        </member>
+        <member name="T:FirebasePushNotificaiton.Services.ValidateService">
+            <summary>
+            Firebase Push Notification Send Request Model Validate Service
+            </summary>
+        </member>
+        <member name="M:FirebasePushNotificaiton.Services.ValidateService.ValidateRequest(FirebasePushNotificaiton.Models.FirebaseMessage)">
+            <summary>
+            Firebase Push Notification Send Request Model Validate Method
+            </summary>
+        </member>
+    </members>
+</doc>

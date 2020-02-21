@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>FirebasePushNotification.EnesAys</id>
+    <version>1.0.0</version>
+    <title>FirebasePushNotification</title>
+    <authors>Enes Aysan</authors>
+    <owners>Enes Aysan</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>    
+    <projectUrl>https://github.com/EnesAys/FirebasePushNotification</projectUrl>
+    <icon>enesAysan-icon.png</icon>
+    <description>Send Push Notification via firebase api</description>
+    <releaseNotes>First Release</releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>firebase notification push send</tags>
+    <dependencies>
+      <group targetFramework="netstandard2.0">
+        <dependency id="Newtonsoft.Json" version="12.0.3" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\netstandard2.0\FirebasePushNotificaiton.dll" target="lib\netstandard2.0\FirebasePushNotificaiton.dll" />
+    <file src="bin\Release\netstandard2.0\FirebasePushNotificaiton.xml" target="lib\netstandard2.0\FirebasePushNotificaiton.xml" />
+    <file src="enesAysan-icon.png" target="" /> 
+  </files>
+</package>
