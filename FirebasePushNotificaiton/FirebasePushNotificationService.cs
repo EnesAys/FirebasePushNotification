@@ -21,9 +21,9 @@ namespace FirebasePushNotificaiton
         /// <summary>
         /// Initial Firebase Console Server Key
         /// </summary>
-        public FirebasePushNotificationService(string encryptedServerKeyServerKey,string passPhrase)
+        public FirebasePushNotificationService(string encryptedServerKey,string passPhrase)
         {
-            _encryptedServerKey = encryptedServerKeyServerKey;
+            _encryptedServerKey = encryptedServerKey;
             _passPhrase = passPhrase;
         }
 

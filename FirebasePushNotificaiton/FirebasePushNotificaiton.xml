@@ -9,7 +9,7 @@
             Firebase Push Notification Service
             </summary>
         </member>
-        <member name="M:FirebasePushNotificaiton.FirebasePushNotificationService.#ctor(System.String)">
+        <member name="M:FirebasePushNotificaiton.FirebasePushNotificationService.#ctor(System.String,System.String)">
             <summary>
             Initial Firebase Console Server Key
             </summary>
@@ -20,6 +20,21 @@
             </summary>
             <param name="notificationObject">Firebase Api Push Notification Send Method request Model parameter</param>
             <returns> bool </returns>        
+        </member>
+        <member name="T:FirebasePushNotificaiton.Helper.EncryptionHelper">
+            <summary>
+            String Encryption Helper 
+            </summary>
+        </member>
+        <member name="M:FirebasePushNotificaiton.Helper.EncryptionHelper.Encrypt(System.String,System.String)">
+            <summary>
+            String Encrypt Method
+            </summary>
+        </member>
+        <member name="M:FirebasePushNotificaiton.Helper.EncryptionHelper.Decrypt(System.String,System.String)">
+            <summary>
+            String Decrypt Method
+            </summary>
         </member>
         <member name="T:FirebasePushNotificaiton.Interfaces.INotification`1">
             <summary>
