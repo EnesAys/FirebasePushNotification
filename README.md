@@ -34,7 +34,11 @@ Injection Sample;
 Startup.cs
 
 ```
- services.AddSingleton(typeof(INotification<FirebaseMessage>), new FirebasePushNotificationService("Your Firebase Console Server Key"));
+ var clearServerTexy= "Your Firebase Console Server Key";
+ var myPassPhrase = "MyPassKey";
+ var encryptedText = EncryptionHelper.Encrypt(clearServerTexy, myPassPhrase);
+ 
+ services.AddSingleton(typeof(INotification<FirebaseMessage>), new FirebasePushNotificationService(encryptedText, myPassPhrase));
 ```
 
 Use Send Method for push notification.
@@ -54,5 +58,5 @@ _firebasePushNotificationService.Send(new FirebaseMessage
                 {
                     url = "http://enesaysan.com/"
                 }
-            })
+            });
 ```
