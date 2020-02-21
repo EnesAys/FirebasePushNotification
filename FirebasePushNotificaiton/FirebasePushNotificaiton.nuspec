@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>FirebasePushNotification.EnesAys</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>FirebasePushNotification</title>
     <authors>Enes Aysan</authors>
     <owners>Enes Aysan</owners>
@@ -11,7 +11,7 @@
     <projectUrl>https://github.com/EnesAys/FirebasePushNotification</projectUrl>
     <icon>enesAysan-icon.png</icon>
     <description>Send Push Notification via firebase api</description>
-    <releaseNotes>First Release</releaseNotes>
+    <releaseNotes>Encyrpt Added</releaseNotes>
     <copyright>Copyright 2020</copyright>
     <tags>firebase notification push send</tags>
     <dependencies>
