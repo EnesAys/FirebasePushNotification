@@ -1,6 +1,8 @@
 # FirebasePushNotification
 Send Firebase Push Notification via nuget package
 
+https://www.nuget.org/packages/FirebasePushNotification.EnesAys/
+
 Install nuget package 
 
 Package Manager Console
@@ -17,6 +19,23 @@ INotification <FirebaseMessage> _firebasePushNotificationService = new FirebaseP
 ```
 
 This line for example, you should use injection.
+
+Injection Sample;
+
+```
+   private readonly ILogger<HomeController> _logger;
+   INotification<FirebaseMessage> _firebasePushNotificationService;
+   public HomeController(ILogger<HomeController> logger, INotification<FirebaseMessage> firebasePushNotificationService)
+   {
+       _logger = logger;
+       _firebaseService = firebaseService;
+   }
+```
+Startup.cs
+
+```
+ services.AddSingleton(typeof(INotification<FirebaseMessage>), new FirebasePushNotificationService("Your Firebase Console Server Key"));
+```
 
 Use Send Method for push notification.
 
