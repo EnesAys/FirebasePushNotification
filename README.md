@@ -15,7 +15,11 @@ Nuget Package Manager
 search "FirebasePushNotification.EnesAys"
 
 ```
-INotification <FirebaseMessage> _firebasePushNotificationService = new FirebasePushNotificationService("Your Firebase Console Server Key");
+var clearServerTexy= "Your Firebase Console Server Key";
+var myPassPhrase = "MyPassKey";
+var encryptedText = EncryptionHelper.Encrypt(clearServerTexy, myPassPhrase);
+ 
+INotification <FirebaseMessage> _firebasePushNotificationService = new FirebasePushNotificationService(encryptedText, myPassPhrase);
 ```
 
 This line for example, you should use injection.
