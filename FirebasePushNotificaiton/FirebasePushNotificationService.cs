@@ -14,14 +14,14 @@ namespace FirebasePushNotificaiton
     /// Firebase Push Notification Service
     /// </summary>
     public class FirebasePushNotificationService : INotification<FirebaseMessage>
-    {        
+    {
         private readonly string _encryptedServerKey;
         private readonly string _passPhrase;
 
         /// <summary>
         /// Initial Firebase Console Server Key
         /// </summary>
-        public FirebasePushNotificationService(string encryptedServerKey,string passPhrase)
+        public FirebasePushNotificationService(string encryptedServerKey, string passPhrase)
         {
             _encryptedServerKey = encryptedServerKey;
             _passPhrase = passPhrase;
@@ -42,7 +42,7 @@ namespace FirebasePushNotificaiton
                 string jsonMessage = JsonConvert.SerializeObject(notificationObject);
                 var request = new HttpRequestMessage(HttpMethod.Post, FireBasePushNotificationsURL);
 
-                request.Headers.TryAddWithoutValidation("Authorization", "key=" + EncryptionHelper.Decrypt(_encryptedServerKey,_passPhrase));
+                request.Headers.TryAddWithoutValidation("Authorization", "key=" + EncryptionHelper.Decrypt(_encryptedServerKey, _passPhrase));
                 request.Content = new StringContent(jsonMessage, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage result;
